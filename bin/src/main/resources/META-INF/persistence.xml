@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="pizzadb" transaction-type="RESOURCE_LOCAL">
+		<!--
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		-->
+    <non-jta-data-source>java:jboss/datasources/pizzadb</non-jta-data-source>
+    <class>com.capri.pizzeria.rest.model.Pizza</class>
+		<class>com.capri.pizzeria.rest.model.Pizzatopping</class>
+		<class>com.capri.pizzeria.rest.model.PizzatoppingPK</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<!--
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:pizzadb;DB_CLOSE_DELAY=-1"/>
+      <property name="javax.persistence.jdbc.user" value="admin"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+    </properties>
+		-->
+  </persistence-unit>
+</persistence>
+
+
+<!--
+<persistence version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="pizzadb">
+		<jta-data-source>java:jboss/datasources/pizzadb</jta-data-source>
+		<class>com.capri.pizzeria.rest.model.Pizza</class>
+		<class>com.capri.pizzeria.rest.model.Pizzatopping</class>
+		<class>com.capri.pizzeria.rest.model.PizzatoppingPK</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:pizzadb" />
+      <property name="javax.persistence.jdbc.user" value="admin" />
+      <property name="javax.persistence.jdbc.password" value="" />
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+      <property name="show_sql" value="true"/>
+      <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+		</properties>
+	</persistence-unit>
+</persistence>
+-->
